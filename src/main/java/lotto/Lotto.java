@@ -12,8 +12,12 @@ public class Lotto {
 
     private void validate(List<Integer> numbers) {
         if (numbers.size() != 6) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("6자리가 아닙니다");
         }
+    }
+
+    public static Lotto of(List<Integer> numbers) {
+        return new Lotto(numbers);
     }
 
     // TODO: 추가 기능 구현
