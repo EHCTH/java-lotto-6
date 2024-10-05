@@ -1,11 +1,10 @@
-package lotto;
+package lotto.domain;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class LottoTest {
@@ -28,5 +27,17 @@ class LottoTest {
     @Test
     void bonusNumbersBothTest() {
     }
+
     // 아래에 추가 테스트 작성 가능
+    @DisplayName("로또 번호의 최솟값, 최댓값 검사")
+    @Test
+    void lottoNumberMaxMinTest() {
+        assertThatThrownBy(() -> Lotto.of(List.of(0, 45, 1, 2, 3, 4)))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 최소값 또는 최대값을 넘었습니다");
+
+        assertThatThrownBy(() -> Lotto.of(List.of(1, 2, 3, 4, 5, 46)))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 최소값 또는 최대값을 넘었습니다");
+    }
 }
