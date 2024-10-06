@@ -20,12 +20,9 @@ public class WinningCostTest {
 
         Lotto lotto = Lotto.of(List.of(1, 2, 3, 4, 5, 6));
         LottoTickets lottoTickets = new LottoTickets(List.of(lotto));
-        Profit profit = new Profit(new Cost());
         WinningLottoCalculatorService winningLottoCalculatorService =
-                new WinningLottoCalculatorService(
-                        profit
-                );
-        winningLottoCalculatorService.winningCalculator(winningLottery, lottoTickets);
+                new WinningLottoCalculatorService(new Profit(new Cost()));
+        Profit profit = winningLottoCalculatorService.updateProfit(winningLottery, lottoTickets);
         assertThat(profit.getTotal()).isEqualTo(2_000_000_000L);
 
     }
@@ -38,12 +35,9 @@ public class WinningCostTest {
 
         Lotto lotto = Lotto.of(List.of(7, 2, 3, 4, 5, 6));
         LottoTickets lottoTickets = new LottoTickets(List.of(lotto));
-        Profit profit = new Profit(new Cost());
         WinningLottoCalculatorService winningLottoCalculatorService =
-                new WinningLottoCalculatorService(
-                        profit
-                );
-        winningLottoCalculatorService.winningCalculator(winningLottery, lottoTickets);
+                new WinningLottoCalculatorService(new Profit(new Cost()));
+        Profit profit = winningLottoCalculatorService.updateProfit(winningLottery, lottoTickets);
         assertThat(profit.getTotal()).isEqualTo(30_000_000L);
     }
 
@@ -55,12 +49,9 @@ public class WinningCostTest {
 
         Lotto lotto = Lotto.of(List.of(1, 2, 3, 4, 5, 8));
         LottoTickets lottoTickets = new LottoTickets(List.of(lotto));
-        Profit profit = new Profit(new Cost());
         WinningLottoCalculatorService winningLottoCalculatorService =
-                new WinningLottoCalculatorService(
-                        profit
-                );
-        winningLottoCalculatorService.winningCalculator(winningLottery, lottoTickets);
+                new WinningLottoCalculatorService(new Profit(new Cost()));
+        Profit profit = winningLottoCalculatorService.updateProfit(winningLottery, lottoTickets);
         assertThat(profit.getTotal()).isEqualTo(1_500_000L);
     }
 
@@ -72,12 +63,9 @@ public class WinningCostTest {
 
         Lotto lotto = Lotto.of(List.of(2, 3, 4, 5, 8, 9));
         LottoTickets lottoTickets = new LottoTickets(List.of(lotto));
-        Profit profit = new Profit(new Cost());
         WinningLottoCalculatorService winningLottoCalculatorService =
-                new WinningLottoCalculatorService(
-                        profit
-                );
-        winningLottoCalculatorService.winningCalculator(winningLottery, lottoTickets);
+                new WinningLottoCalculatorService(new Profit(new Cost()));
+        Profit profit = winningLottoCalculatorService.updateProfit(winningLottery, lottoTickets);
         assertThat(profit.getTotal()).isEqualTo(50_000L);
     }
 
@@ -89,12 +77,9 @@ public class WinningCostTest {
 
         Lotto lotto = Lotto.of(List.of(1, 2, 3, 8, 9, 10));
         LottoTickets lottoTickets = new LottoTickets(List.of(lotto));
-        Profit profit = new Profit(new Cost());
         WinningLottoCalculatorService winningLottoCalculatorService =
-                new WinningLottoCalculatorService(
-                        profit
-                );
-        winningLottoCalculatorService.winningCalculator(winningLottery, lottoTickets);
+                new WinningLottoCalculatorService(new Profit(new Cost()));
+        Profit profit = winningLottoCalculatorService.updateProfit(winningLottery, lottoTickets);
         assertThat(profit.getTotal()).isEqualTo(5_000L);
     }
 
@@ -106,12 +91,9 @@ public class WinningCostTest {
 
         Lotto lotto = Lotto.of(List.of(8, 9, 10, 11, 12, 13));
         LottoTickets lottoTickets = new LottoTickets(List.of(lotto));
-        Profit profit = new Profit(new Cost());
         WinningLottoCalculatorService winningLottoCalculatorService =
-                new WinningLottoCalculatorService(
-                        profit
-                );
-        winningLottoCalculatorService.winningCalculator(winningLottery, lottoTickets);
+                new WinningLottoCalculatorService(new Profit(new Cost()));
+        Profit profit = winningLottoCalculatorService.updateProfit(winningLottery, lottoTickets);
         assertThat(profit.getTotal()).isEqualTo(0L);
     }
 
