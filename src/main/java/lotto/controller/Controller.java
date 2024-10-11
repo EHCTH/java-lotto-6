@@ -3,10 +3,11 @@ package lotto.controller;
 import lotto.domain.LottoTickets;
 import lotto.domain.Profit;
 import lotto.domain.WinningLottery;
+import lotto.domain.cost.IBuyerCost;
 import lotto.service.LottoBuyerService;
 import lotto.service.WinningLottoCalculatorService;
 import lotto.service.WinningLottoSelectService;
-import lotto.winningcost.WinningPlace;
+import lotto.view.OutputView;
 
 public class Controller {
     private final WinningLottoSelectService winningLottoSelectService;
@@ -20,19 +21,24 @@ public class Controller {
         this.winningLottoSelectService = winningLottoSelectService;
         this.winningLottoCalculatorService = winningLottoCalculatorService;
     }
+
     public void run() {
-        System.out.println("구입금액을 입력해 주세요.");
-        lottoBuyerService.insertCoin();
-        LottoTickets lottoTickets = lottoBuyerService.buy();
-        WinningLottery winningLottery = winningLottoSelectService.selectWinningLotto();
-        winningLottoCalculatorService.winningCalculator(winningLottery, lottoTickets);
-        long buyCost = lottoBuyerService.getCost();
-        System.out.println("당첨 통계\n" +
-                "---");
-        System.out.println(WinningPlace.print());
-        System.out.printf("총 수익률은 %.1f%%입니다.", winningLottoCalculatorService.getProfit(buyCost));
+        IBuyerCost buyerCost = lottoBuyerService.getCost();
+        LottoTickets lottoTickets = buyTickets();
+        OutputView.printLottoTicketsInfo(lottoTickets);
+        WinningLottery winningLottery = selectWinningLotto();
+        Profit profit = calculateProfit(winningLottery, lottoTickets);
+        OutputView.printResultInfo(profit, buyerCost);
 
     }
-
+    public LottoTickets buyTickets() {
+        return lottoBuyerService.buy();
+    }
+    public WinningLottery selectWinningLotto() {
+        return winningLottoSelectService.selectWinningLotto();
+    }
+    public Profit calculateProfit(WinningLottery winningLottery, LottoTickets lottoTickets) {
+        return winningLottoCalculatorService.updateProfit(winningLottery, lottoTickets);
+    }
 
 }

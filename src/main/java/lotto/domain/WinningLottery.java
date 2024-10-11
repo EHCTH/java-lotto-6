@@ -7,7 +7,6 @@ public class WinningLottery {
     private final BonusNumber bonusNumber;
     public WinningLottery(Lotto lotto, BonusNumber bonusNumber) {
         this.lotto = lotto;
-        LottoValidator.validateExistsNumber(lotto, bonusNumber);
         this.bonusNumber = bonusNumber;
     }
     public int countMatchedNumbers(Lotto lotto) {

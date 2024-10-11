@@ -15,7 +15,7 @@ public class WinningCostTest {
     @Test
     void firstPlaceTest() {
         Lotto winnigLotto = Lotto.of(List.of(1, 2, 3, 4, 5, 6));
-        BonusNumber bonusNumber = new BonusNumber(7);
+        BonusNumber bonusNumber = BonusNumber.validateDuplicateOf("7", winnigLotto);
         WinningLottery winningLottery = new WinningLottery(winnigLotto, bonusNumber);
 
         Lotto lotto = Lotto.of(List.of(1, 2, 3, 4, 5, 6));
@@ -30,7 +30,7 @@ public class WinningCostTest {
     @Test
     void secondPlaceTest() {
         Lotto winnigLotto = Lotto.of(List.of(1, 2, 3, 4, 5, 6));
-        BonusNumber bonusNumber = new BonusNumber(7);
+        BonusNumber bonusNumber = BonusNumber.validateDuplicateOf("7", winnigLotto);
         WinningLottery winningLottery = new WinningLottery(winnigLotto, bonusNumber);
 
         Lotto lotto = Lotto.of(List.of(7, 2, 3, 4, 5, 6));
@@ -44,7 +44,7 @@ public class WinningCostTest {
     @Test
     void thirdPlaceTest() {
         Lotto winnigLotto = Lotto.of(List.of(1, 2, 3, 4, 5, 6));
-        BonusNumber bonusNumber = new BonusNumber(7);
+        BonusNumber bonusNumber = BonusNumber.validateDuplicateOf("7", winnigLotto);
         WinningLottery winningLottery = new WinningLottery(winnigLotto, bonusNumber);
 
         Lotto lotto = Lotto.of(List.of(1, 2, 3, 4, 5, 8));
@@ -58,7 +58,7 @@ public class WinningCostTest {
     @Test
     void fourthPlaceTest() {
         Lotto winnigLotto = Lotto.of(List.of(1, 2, 3, 4, 5, 6));
-        BonusNumber bonusNumber = new BonusNumber(7);
+        BonusNumber bonusNumber = BonusNumber.validateDuplicateOf("7", winnigLotto);
         WinningLottery winningLottery = new WinningLottery(winnigLotto, bonusNumber);
 
         Lotto lotto = Lotto.of(List.of(2, 3, 4, 5, 8, 9));
@@ -72,7 +72,7 @@ public class WinningCostTest {
     @Test
     void fifthPlaceTest() {
         Lotto winnigLotto = Lotto.of(List.of(1, 2, 3, 4, 5, 6));
-        BonusNumber bonusNumber = new BonusNumber(7);
+        BonusNumber bonusNumber = BonusNumber.validateDuplicateOf("7", winnigLotto);
         WinningLottery winningLottery = new WinningLottery(winnigLotto, bonusNumber);
 
         Lotto lotto = Lotto.of(List.of(1, 2, 3, 8, 9, 10));
@@ -86,7 +86,7 @@ public class WinningCostTest {
     @Test
     void lastPlaceTest() {
         Lotto winnigLotto = Lotto.of(List.of(1, 2, 3, 4, 5, 6));
-        BonusNumber bonusNumber = new BonusNumber(7);
+        BonusNumber bonusNumber = BonusNumber.validateDuplicateOf("7", winnigLotto);
         WinningLottery winningLottery = new WinningLottery(winnigLotto, bonusNumber);
 
         Lotto lotto = Lotto.of(List.of(8, 9, 10, 11, 12, 13));

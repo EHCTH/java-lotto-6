@@ -1,5 +1,6 @@
 package lotto.domain;
 
+import lotto.domain.cost.IBuyerCost;
 import lotto.domain.cost.ICost;
 
 public class Profit {
@@ -12,6 +13,11 @@ public class Profit {
     }
     public long getTotal() {
         return cost.getTotal();
+    }
+    public double getProfit(IBuyerCost buyerCost) {
+        long total = cost.getTotal();
+        long buyPrice = buyerCost.getPrice();
+        return ((double) total / buyPrice) * 100;
     }
 
 

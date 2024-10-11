@@ -1,21 +1,20 @@
 package lotto.domain.cost;
 
-public class BuyerCost implements IBuyerCost{
+import lotto.domain.Profit;
 
-    private long total = 0L;
+public class BuyerCost implements IBuyerCost{
+    private final long price;
+    BuyerCost(long price) {
+        this.price = price;
+    }
 
     @Override
     public int spendMoney() {
-        return (int) (total / 1000);
+        return (int) (price / 1000);
     }
 
     @Override
-    public void updateCost(long price) {
-        total += price;
-    }
-
-    @Override
-    public long getTotal() {
-        return total;
+    public long getPrice() {
+        return price;
     }
 }

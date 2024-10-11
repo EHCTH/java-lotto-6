@@ -14,4 +14,16 @@
     - [x] lotto_within_range test
     - [x] lotto_size test
     - [x] lotto_duplicate test
-    - 
+
+- 예외 목록
+  - InputValidator
+    - [x] 값이 있는가
+    - [x] 정수인가 (부동소수, 중간 공백 처리 포함)
+    - [x] 1000원으로 떨어지는가
+    - [x] 금액은 최대 10만은 넘지 않는가
+  - WinningLottoValidator
+    - [x] 콤마로 구분되어있는지
+    - [x] 공백이없는지
+    - [x] 값이 있는지
+    - [x] 숫자로만 되어있는지
+  - BonusNumberValidator

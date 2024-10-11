@@ -31,8 +31,8 @@ public class LottoValidator {
     public static void validateMaxMin(int number) {
         if (!isWithinRange(number)) throw new IllegalArgumentException("[ERROR] 최소값 또는 최대값을 넘었습니다");
     }
-    public static void validateExistsNumber(Lotto lotto, BonusNumber bonusNumber) {
-       boolean duplicateNumber = lotto.getNumbers().contains(bonusNumber.getNumber());
+    public static void validateExistsNumber(Lotto lotto, int bonusNumber) {
+       boolean duplicateNumber = lotto.getNumbers().contains(bonusNumber);
        if (duplicateNumber) throw new IllegalArgumentException("[ERROR] 이미 있는 번호 입니다");
     }
 }

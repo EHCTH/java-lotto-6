@@ -1,5 +1,6 @@
 package lotto.domain;
 
+import lotto.util.Convertor;
 import lotto.validate.LottoValidator;
 
 import java.util.*;
@@ -25,7 +26,9 @@ public class Lotto {
     public static Lotto of(List<Integer> numbers) {
         return new Lotto(numbers);
     }
-
+    public static Lotto of(String input) {
+        return new Lotto(Convertor.toList(input));
+    }
     // TODO: 추가 기능 구현
     public void sort() {
         Collections.sort(numbers);

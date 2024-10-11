@@ -7,7 +7,6 @@ public class LottoTickets {
     public LottoTickets(List<Lotto> lottoTickets) {
         this.lottoTickets = lottoTickets;
         sort();
-        System.out.println(this);
     }
 
     public String toString() {
