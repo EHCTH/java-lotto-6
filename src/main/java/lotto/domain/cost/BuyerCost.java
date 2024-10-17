@@ -18,3 +18,4 @@ public class BuyerCost implements IBuyerCost{
         return price;
     }
 }
+
